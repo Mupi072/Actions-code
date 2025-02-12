@@ -1,0 +1,85 @@
+// Structure: Name, Display, Input, Output
+
+// Variables
+interact_variable = "" // Stores user input for interaction
+placeholder1 = ""       // Stores placeholder value 1
+placeholder2 = ""       // Stores placeholder value 2
+action_active = false   // Boolean flag to track if an action is active
+
+// Display section (using a loop and conditional logic instead of switch for flexibility)
+display_options = ["Option 1: Interact", "Option 2: Placeholder 1", "Option 3: Placeholder 2"]
+
+while (true) { // Main loop for interaction
+    display_menu(display_options) // Function to display the menu options
+
+    input_choice = get_user_input() // Function to get user input (e.g., 1, 2, or 3)
+
+    if (input_choice == 1) { // Interact variable
+        display_message("Enter your interaction:")
+        interact_variable = get_user_input()
+        process_interaction(interact_variable) // Function to handle the interaction logic
+        action_active = true
+    } else if (input_choice == 2) { // Placeholder 1
+        display_message("Enter value for Placeholder 1:")
+        placeholder1 = get_user_input()
+        process_placeholder1(placeholder1) // Function to handle placeholder 1 logic
+        action_active = true
+    } else if (input_choice == 3) { // Placeholder 2
+        display_message("Enter value for Placeholder 2:")
+        placeholder2 = get_user_input()
+        process_placeholder2(placeholder2) // Function to handle placeholder 2 logic
+        action_active = true
+    } else if (input_choice == "exit" or input_choice == "quit") { // Allow exiting
+        break // Exit the loop
+    } else {
+        display_message("Invalid choice. Please try again.")
+    }
+
+    if (action_active) {
+        display_results(interact_variable, placeholder1, placeholder2) // Display current values
+        action_active = false // Reset for the next action
+    }
+}
+
+
+// Logic functions (examples – you'll need to define the actual logic)
+
+function process_interaction(input) {
+    // Example: Process the user input
+    display_message("You entered: " + input)
+    // ... more complex logic based on 'input' ...
+}
+
+function process_placeholder1(input) {
+    // Example: Process placeholder 1
+    // ... logic to update or use placeholder1 ...
+}
+
+function process_placeholder2(input) {
+    // Example: Process placeholder 2
+    // ... logic to update or use placeholder2 ...
+}
+
+// Helper functions (you'll need to implement these based on your environment)
+
+function display_menu(options) {
+    // Code to display the menu options to the user
+    // Example: Print each option with a number
+}
+
+function get_user_input() {
+    // Code to get input from the user (e.g., using a console input function)
+    // Should return the user's input as a string
+}
+
+function display_message(message) {
+    // Code to display a message to the user
+}
+
+function display_results(interact, p1, p2) {
+    // Code to display the current values of the variables
+    display_message("Current Values:")
+    display_message("Interact: " + interact)
+    display_message("Placeholder 1: " + p1)
+    display_message("Placeholder 2: " + p2)
+}
