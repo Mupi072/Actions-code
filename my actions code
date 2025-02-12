@@ -1,0 +1,41 @@
+Action Input psuedo code
+
+
+
+//Structure should be Name,Display,Input,Output
+
+
+
+//Variables to store
+
+store interact variable
+
+store placeholder var
+
+store placeholder var
+
+
+
+//Display section.Use case statements as these are a list of actions.
+
+switch(<string expressions>)
+
+{
+
+    case 1 :  //interact variable
+
+        statement;
+
+    case 2 : //placeholder variable
+
+        statement;
+
+   default :
+
+        statement;
+
+}
+
+
+
+//Logic.Use if & else statements.Use booleans to see which action is active.Use while statement.
